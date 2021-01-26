@@ -87,7 +87,7 @@ class Obstacle {
     this.speedX = 0;
     this.speedY = 0;
     this.raposaImg = new Image()
-    this.raposaImg.src = '/images/raposa.jpeg';
+    this.raposaImg.src = '/images/raposa.png';
   }
 
   move() {
