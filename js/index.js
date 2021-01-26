@@ -64,31 +64,64 @@ class Component {
 
  // atualiza propriedades x e y do objeto
  newPos() {
-   this.x += this.speedX;
-  this.y += this.speedY;
+    this.x += this.speedX;
+    this.y += this.speedY;
   }
 
   // desenha o jogador/player
   update() {
-    myGameArea.context.drawImage(this.playerImg,this.x,this.y,this.width,this.height)
+    myGameArea.context.drawImage(this.playerImg,this.x,this.y,this.width,this.height);
+  }
+
+
+  
+}
+
+
+class Obstacle {
+  constructor(x, y, width, height, obstacles) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;
+    this.raposaImg = new Image()
+    this.raposaImg.src = '/images/raposa.jpeg';
+  }
+
+  move() {
+    this.speedX = -6;
+    this.x += this.speedX;
+  }
+
+  draw() {
+    myGameArea.context.drawImage(this.raposaImg,this.x,this.y,this.width,this.height)
+    console.log(`executou o draw`)
+  }
+
+  update(){
+   
   }
 
   left() {
-    
     return this.x;
   }
+
   right() {
     return this.x + this.width;
   }
+
   top() {
     return this.y;
   }
+
   bottom() {
     return this.y + this.height;
   }
 
-  crashWith(obstacle) {
-    return !(
+  isCrashedWith(obstacle) {
+    const condition = !(
       this.bottom() < obstacle.top() ||
       this.top() > obstacle.bottom() ||
       this.right() < obstacle.left() ||
@@ -97,50 +130,30 @@ class Component {
   }
 }
 
-// motor do jogo
-function updateGameArea() {
-  myGameArea.clear();
-  player.newPos();
-  player.update();
-  updateObstacles();
-  
-  
-  checkGameOver()
-  
-}
 
 let myObstacles = [];
 
 
+// imagem do obstaculo
 
 
 
-// funcao que cria obstaculos
-function updateObstacles() {
-  for (i = 0; i < myObstacles.length; i++) {
-    myObstacles[i].x += -1;
-    myObstacles[i].update();
+function createObstacles() {
+  frames += 1;
+  let random = Math.floor(Math.random() * 3) + 1;
+  if (frames % (random * 70) === 0) {
+    myObstacles.push(1) 
   }
+}
 
-  myGameArea.frames += 1;
+console.log(myObstacles)
 
-  if (myGameArea.frames < 500){
-    if (myGameArea.frames % 120 === 0) {
-      let x = myGameArea.canvas.width;
-      let minHeight = 20;
-      let maxHeight = 200;
-      let height = Math.floor(
-        Math.random() * (maxHeight - minHeight + 1) + minHeight
-      );
-      let minGap = 50;
-      let maxGap = 200;
-      let gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-      //obstaculo inferior               
-      myObstacles.push(
-        new Component(10, x - height - gap, "green", x, height + gap)
-      );
-    }
-  } 
+function moveObstacles(myObstacles) {
+  for (let i = 0; i <= myObstacles.length; i++) {
+    enemy = new Obstacle(100, 305, 50, 40)
+    enemy.draw();
+    enemy.move();
+  }
 }
 
 function checkGameOver() {
@@ -155,10 +168,11 @@ function checkGameOver() {
 // cria o jogador / player
 const player = new Component(50, 40, 0, 305);
 
-// START DO JOGO, chama a updateGameArea a cada intervalo de 20ms
-// a updategamearea chama a updateObstacles
-// a updateObstacles incrementa 1 nos frames, a cada 120 frames cria 2 obstaculos (superior e inferior), e move eles
+
+
+
 myGameArea.start();
+
 
 document.addEventListener("keydown", (e) => {
   switch (e.key) {
@@ -181,3 +195,13 @@ document.addEventListener("keyup", (e) => {
   player.speedX = 0;
   player.speedY = 0;
 });
+
+// motor do jogo
+function updateGameArea() {
+  myGameArea.clear();
+  player.newPos();
+  player.update();
+  createObstacles();
+  moveObstacles(myObstacles)
+  
+}
