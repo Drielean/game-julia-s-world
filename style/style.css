@@ -1,5 +1,4 @@
 canvas {
-  background-color: #385466;
   border: 6px solid #05144f;
   border-radius: 3%;
 }
@@ -11,7 +10,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   height: 800px;
-  background-image: url(../images/tela\ inicio.jpg);
+  background-image: url(../images/telaInicio.jpg);
   background-size: cover;
   background-position: center;
 }

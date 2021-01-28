@@ -19,7 +19,7 @@ const myGameArea = {
     stop() {
         clearInterval(this.interval);
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.canvas.style.background = 'url("/images/Game Over.png")';
+        this.canvas.style.background = 'url("/images/GameOver1.png")';
         
     },
 

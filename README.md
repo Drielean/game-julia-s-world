@@ -2,7 +2,7 @@
 
 Julia's World is a game built in HTML, CSS, canvas and JavaScript.
 
-Click
+Click [HERE]() to play!
 
 For better experience, run this game in a browser on you nootebook or desktop PC. Unfortunatelly this game is not compatible with mobile, yet.
 
@@ -34,3 +34,7 @@ This is a free software, feel free to contribute in any way you want
 3.  Commit your changes (git commit -am 'Add some fooBar')
 4.  Push to the branch (git push origin feature/fooBar)
 5.  Create a new Pull Request
+
+## Slides
+
+Click [HERE](https://docs.google.com/presentation/d/16A3v_R0zOq4aSZw1CgI0HqedMMGthjl449uhCeGRyc0/edit?usp=sharing)
