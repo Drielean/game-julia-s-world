@@ -1,3 +1,34 @@
 canvas {
-  border: 1px solid black;
+  background-color: #385466;
+  border: 6px solid #05144f;
+  border-radius: 3%;
+}
+
+body {
+  padding: 0;
+  text-align: center;
+  display: block;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #7c1b6c;
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+}
+
+body button {
+  font-size: 30px;
+  background-color: #e22ad3;
+  color: #fff;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+button:active {
+  box-shadow: none;
+  background-color: #c79bbc;
+  top: 5px;
 }
