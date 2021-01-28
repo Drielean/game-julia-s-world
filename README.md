@@ -2,7 +2,7 @@
 
 Julia's World is a game built in HTML, CSS, canvas and JavaScript.
 
-Click [HERE]() to play!
+Click [HERE](https://drielean.github.io/game-julia-s-world/.) to play!
 
 For better experience, run this game in a browser on you nootebook or desktop PC. Unfortunatelly this game is not compatible with mobile, yet.
 
