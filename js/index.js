@@ -215,13 +215,7 @@ document.addEventListener("keydown", (e) => {
         case "ArrowUp": // Arrow Up
             player.jump()
             break;
-        //    case "ArrowLeft": // left arrow
-        //    player.speedX -= 1;
-        //    break;
-        //    case "ArrowRight": // right arrow
-        //    console.log("right");
-        //    player.speedX += 1;
-        //    break;
+       
     }
 });
 
