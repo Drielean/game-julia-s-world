@@ -189,7 +189,6 @@ function checkGameOver() {
             location.reload();
           }, 4000)
         
-        
     }
 
 }
