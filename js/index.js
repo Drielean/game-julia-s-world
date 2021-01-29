@@ -53,7 +53,7 @@ class Component {
         if (this.jumpStatus == true) {
            this.jumpStatus = false
             for (var u = 0; u <= count; u++) {
-                this.playerImg.src = './images/png/Jump (7).png'
+                this.playerImg.src = './images/png/Jump (7).png';
                 this.y -= 2
 
                 setTimeout(() => {
