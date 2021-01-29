@@ -7,7 +7,7 @@ const myGameArea = {
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
-        this.canvas.style.backgroundImage = 'url("/images/fundo.jpg")';
+        this.canvas.style.backgroundImage = 'url("./images/fundo.jpg")';
     },
 
     // limpa o canvas
@@ -19,7 +19,7 @@ const myGameArea = {
     stop() {
         clearInterval(this.interval);
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.canvas.style.background = 'url("/images/GameOver1.png")';
+        this.canvas.style.background = 'url("./images/GameOver1.png")';
         
     },
 
@@ -43,7 +43,7 @@ class Component {
         this.speedX = 0;
         this.speedY = 0;
         this.playerImg = new Image()
-        this.playerImg.src = '/images/png/Idle (9).png';
+        this.playerImg.src = './images/png/Idle (9).png';
         this.jumpStatus = true
     }
 
@@ -53,12 +53,12 @@ class Component {
         if (this.jumpStatus == true) {
            this.jumpStatus = false
             for (var u = 0; u <= count; u++) {
-                this.playerImg.src = '/images/png/Jump (7).png'
+                this.playerImg.src = './images/png/Jump (7).png'
                 this.y -= 2
 
                 setTimeout(() => {
                     this.y += 2
-                    this.playerImg.src = '/images/png/Idle (9).png';
+                    this.playerImg.src = './images/png/Idle (9).png';
                     this.jumpStatus = true
                    
                 }, 900);
@@ -117,7 +117,7 @@ class Obstacle {
         this.speedX = 0;
         this.speedY = 0;
         this.raposaImg = new Image()
-        this.raposaImg.src = '/images/raposa.png';
+        this.raposaImg.src = './images/raposa.png';
     }
 
     move() {
